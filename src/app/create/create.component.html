@@ -1,0 +1,21 @@
+<div style="width: 35%;margin: 0 auto;text-align: left;">
+  <!--<form style="width:100%" action="">
+        <input #dummy style="display:none;" type="text" value="{{ (posts | async).length}}">
+        <b>Title:</b><br>
+        <input style="width:100%;margin:10px 0px;padding:5px;" [(ngModel)]="post.title" type="text" name="title" placeholder="Enter post title here"><br>
+        <b>Description:</b><br>
+        <input style="width:100%;margin:10px 0px;padding:5px;" [(ngModel)]="post.description" type="text" name="description" placeholder="Enter post descripion here"><br><br>
+        <input (click)="addPost(dummy.value)" routerLink="/list" style="text-align:center"type="submit" value="Submit">
+  </form>-->
+
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value,dummy.value)" style="width:100%">
+        <input  #dummy formControlName="id"  style="display:none;"   name="id" type="text" value="{{ (posts | async).length}}">
+        <b>Title:</b><br>
+        <input formControlName="title" style="width:100%;margin:10px 0px;padding:5px;" type="text" name="title" placeholder="Enter post title here"><br>
+        <b>Description:</b><br>
+        <input formControlName="description" style="width:100%;margin:10px 0px;padding:5px;" type="text" name="description" placeholder="Enter post descripion here"><br><br>
+        <input style="text-align:center" type="submit" value="Submit Form">
+  </form>
+
+
+</div>

@@ -1,0 +1,12 @@
+<div style="width: 35%;margin: 0 auto;text-align: left;">
+
+  <form style="width:100%" action="">
+        <b>Title:</b><br>
+        <input style="width:100%;margin:10px 0px;padding:5px;" [(ngModel)]="post.title" type="text" name="title" placeholder="Enter post title here"><br>
+        <b>Description:</b><br>
+        <input style="width:100%;margin:10px 0px;padding:5px;" [(ngModel)]="post.description" type="text" name="description" placeholder="Enter post descripion here"><br><br>
+        <input (click)="editPost(post.title,post.description,post.$key)" routerLink="/list" style="text-align:center"type="submit" value="Submit">
+  </form>
+
+
+</div>

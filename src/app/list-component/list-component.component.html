@@ -1,0 +1,26 @@
+
+
+<div style="text-align:center;width: 85%;margin: 0 auto;">
+  <a style="float:left;padding:10px 0px;" routerLink="/create" routerLinkActive="active">
+     <input type="button" value="Click here to Add New post" />
+   </a>
+  <table style="width:100%" class="table" border="1">
+      <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Action</th>
+      </tr>
+
+      <tr *ngFor="let post of posts | async">
+          <td style="padding:5px;">{{post.id}}</td>
+          <td style="padding:5px;">{{post.title}}</td>
+          <td style="padding:5px;">{{post.description}}</td>
+          <td style="padding:5px;">
+            <input type="button" (click)="editlistPost()" value="Edit" [routerLink]="['/edit', {'paramKey': post.$key}]" routerLinkActive="active"/>
+            <input type="button" (click)="deletePost(post.$key)" value="Delete"/>
+
+          </td>
+     </tr>
+  </table>
+</div>
